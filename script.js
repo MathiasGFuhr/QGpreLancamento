@@ -1,4 +1,12 @@
 // ===== CONFIGURAÇÃO INICIAL =====
+// Configuração do Supabase - Substitua pelos seus valores reais
+const SUPABASE_URL = 'https://your-project-id.supabase.co';
+const SUPABASE_ANON_KEY = 'your-anon-key-here';
+
+// Inicializar cliente Supabase
+const { createClient } = supabase;
+const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
 });
@@ -518,7 +526,7 @@ function initFormHandling() {
     });
 }
 
-function handleFormSubmit(e) {
+async function handleFormSubmit(e) {
     e.preventDefault();
     
     const formData = new FormData(e.target);
@@ -543,8 +551,25 @@ function handleFormSubmit(e) {
     submitBtn.textContent = 'Processando...';
     submitBtn.disabled = true;
     
-    // Simular envio (substituir por integração real)
-    setTimeout(() => {
+    // Integração com Supabase
+    try {
+        // Inserir dados no Supabase
+        const { data, error } = await supabaseClient
+            .from('lista_de_espera')
+            .insert([
+                {
+                    nome: name,
+                    email: email,
+                    data_cadastro: new Date().toISOString(),
+                    status: 'ativo'
+                }
+            ]);
+        
+        if (error) {
+            throw error;
+        }
+        
+        // Sucesso
         showNotification('Parabéns! Você foi adicionado à lista VIP! 🎉', 'success');
         e.target.reset();
         
@@ -570,7 +595,19 @@ function handleFormSubmit(e) {
         // Adicionar confetes
         createConfetti();
         
-    }, 2000);
+    } catch (error) {
+        console.error('Erro ao salvar no Supabase:', error);
+        
+        // Verificar se é erro de email duplicado
+        if (error.code === '23505') {
+            showNotification('Este email já está cadastrado na nossa lista VIP!', 'warning');
+        } else {
+            showNotification('Ops! Algo deu errado. Tente novamente.', 'error');
+        }
+    } finally {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+    }
 }
 
 function handleInputFocus(e) {
