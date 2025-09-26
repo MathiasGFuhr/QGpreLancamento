@@ -1,0 +1,23 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Círculo externo -->
+  <circle cx="250" cy="250" r="240" fill="#0A2240" stroke="#FFC107" stroke-width="10"/>
+  
+  <!-- Letras QG -->
+  <g fill="#FFC107">
+    <!-- Q -->
+    <path d="M170,170 L170,280 Q170,310 200,310 L240,310 Q270,310 270,280 L270,170 Q270,140 240,140 L200,140 Q170,140 170,170 Z M200,280 L200,170 Q200,170 240,170 L240,280 Q240,280 200,280 Z M240,280 L270,310 Z"/>
+    
+    <!-- G -->
+    <path d="M330,170 Q330,140 300,140 L290,140 Q260,140 260,170 L260,280 Q260,310 290,310 L300,310 Q330,310 330,280 L330,240 L290,240 L290,270 L300,270 L300,280 L290,280 L290,170 L300,170 L300,180 L330,180 Z"/>
+  </g>
+  
+  <!-- Emblema de escudo com asas -->
+  <g transform="translate(250, 350) scale(0.5)" fill="#FFC107">
+    <path d="M0,-20 L-40,0 L-30,40 L0,60 L30,40 L40,0 Z" fill="#FFC107"/>
+    <path d="M-40,0 L-80,-20 L-80,20 Z" fill="#FFC107"/>
+    <path d="M40,0 L80,-20 L80,20 Z" fill="#FFC107"/>
+  </g>
+  
+  <!-- Texto "DA APROVAÇÃO" -->
+  <text x="250" y="420" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFC107" text-anchor="middle">DA APROVAÇÃO</text>
+</svg>
