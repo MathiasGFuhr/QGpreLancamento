@@ -96,6 +96,108 @@
     }
 }
 
+/* Otimizações de performance para mobile */
+@media (max-width: 768px) {
+    /* Desabilitar animações pesadas no mobile */
+    .floating-card,
+    .shape,
+    .floating-shapes {
+        animation: none !important;
+        transform: none !important;
+    }
+    
+    /* Otimizar renderização */
+    * {
+        will-change: auto !important;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+    }
+    
+    /* Reduzir sombras complexas */
+    .benefit-card,
+    .profile-card,
+    .floating-card {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Otimizar gradientes */
+    .hero-section,
+    .about-section {
+        background: linear-gradient(135deg, #0a0e1a 0%, #1a2332 100%) !important;
+        background-attachment: scroll !important;
+    }
+}
+
+/* Modos de Performance */
+.perf-low {
+    /* Desabilitar Three.js */
+    #three-canvas {
+        display: none !important;
+    }
+    
+    /* Desabilitar animações pesadas */
+    .floating-card,
+    .shape,
+    .floating-shapes,
+    .floating-geometries {
+        animation: none !important;
+        transform: none !important;
+    }
+    
+    /* Reduzir qualidade de renderização */
+    * {
+        will-change: auto !important;
+        backface-visibility: hidden;
+    }
+    
+    /* Simplificar sombras */
+    .benefit-card,
+    .profile-card,
+    .floating-card {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+.perf-medium {
+    /* Reduzir animações */
+    .floating-card {
+        animation-duration: 3s !important;
+    }
+    
+    /* Simplificar sombras */
+    .benefit-card,
+    .profile-card {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+.no-heavy-animations {
+    /* Desabilitar animações pesadas */
+    .floating-card,
+    .shape,
+    .floating-shapes {
+        animation: none !important;
+        transform: none !important;
+    }
+    
+    /* Reduzir transições */
+    * {
+        transition-duration: 0.2s !important;
+    }
+}
+
+.reduced-animations {
+    /* Reduzir duração das animações */
+    .floating-card {
+        animation-duration: 2s !important;
+    }
+    
+    /* Simplificar efeitos hover */
+    .benefit-card:hover {
+        transform: translateY(-2px) !important;
+    }
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 16px;

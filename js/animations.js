@@ -2,12 +2,19 @@
 // Animações GSAP e AOS
 
 function initAnimations() {
+    // Detectar se é mobile para otimizar animações
+    const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
     initGSAP();
     initAOS();
-    initScrollEffects();
-    initParallax();
-    initFloatingElements();
-    initAdvancedHoverEffects();
+    
+    // Reduzir efeitos pesados no mobile
+    if (!isMobile) {
+        initScrollEffects();
+        initParallax();
+        initFloatingElements();
+        initAdvancedHoverEffects();
+    }
 }
 
 function initGSAP() {
@@ -148,12 +155,16 @@ function initGSAP() {
 function initAOS() {
     if (typeof AOS === 'undefined') return;
     
+    // Detectar se é mobile para otimizar AOS
+    const isMobile = window.innerWidth <= 768 || /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    
     AOS.init({
-        duration: 800,
+        duration: isMobile ? 400 : 800, // Duração reduzida no mobile
         easing: 'ease-out-cubic',
         once: true,
-        offset: 100,
-        delay: 100
+        offset: isMobile ? 50 : 100, // Offset menor no mobile
+        delay: isMobile ? 50 : 100, // Delay menor no mobile
+        disable: isMobile ? 'mobile' : false // Desabilitar completamente no mobile se necessário
     });
 }
 

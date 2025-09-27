@@ -13,13 +13,23 @@ document.addEventListener('DOMContentLoaded', function() {
 function initializeApp() {
     console.log('🚀 Iniciando aplicação QG da Aprovação...');
     
+    // Inicializar otimizações de performance primeiro
+    if (window.Performance) {
+        window.Performance.initPerformanceOptimizations();
+    }
+    
     // Inicializar componentes
     if (window.Navigation) window.Navigation.initNavigation();
     if (window.FormHandler) window.FormHandler.initFormHandling();
     if (window.Animations) window.Animations.initAnimations();
-    if (window.ThreeJS) window.ThreeJS.initThreeJS();
     
-    console.log('✅ App inicializada com sucesso!');
+    // Inicializar Three.js apenas se não estiver em modo de baixa performance
+    if (window.ThreeJS && (!window.Performance || window.Performance.getPerformanceMode() !== 'low')) {
+        window.ThreeJS.initThreeJS();
+    }
+    
+    const perfMode = window.Performance ? window.Performance.getPerformanceMode() : 'PADRÃO';
+    console.log(`✅ App inicializada com sucesso! (Modo: ${perfMode.toUpperCase()})`);
     console.log('🎯 O QG da Aprovação - Landing Page');
     console.log('⚡ Desenvolvido com tecnologias modernas');
     console.log('🚀 Three.js + GSAP + AOS');
