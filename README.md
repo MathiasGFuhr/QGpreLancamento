@@ -32,24 +32,21 @@ Landing page moderna e responsiva para captação de leads do sistema "QG da Apr
 QGpreLancamento/
 ├── 📄 index.html              # Página principal
 ├── 📄 styles.css              # Estilos CSS
-├── 📄 .env                    # Variáveis de ambiente (não commitado)
-├── 📄 .gitignore              # Arquivos ignorados pelo Git
 ├── 📄 README.md               # Esta documentação
+├── 📄 SUPABASE_SQL.md         # Comandos SQL para configuração
 ├── 📁 images/                 # Imagens e assets
 │   ├── logo.svg
 │   ├── study-bg.svg
 │   ├── workspace.svg
 │   └── mathiasFuhr.png
 └── 📁 js/                     # Módulos JavaScript
-    ├── 📄 load-env.js         # Carregador de variáveis de ambiente
-    ├── 📄 config.js           # Configuração e Supabase
+    ├── 📄 config-simple.js    # Configuração Supabase
     ├── 📄 notifications.js    # Sistema de notificações
     ├── 📄 threejs.js          # Animações 3D
     ├── 📄 animations.js       # Animações GSAP/AOS
     ├── 📄 navigation.js       # Sistema de navegação
     ├── 📄 form.js             # Gerenciamento de formulários
-    ├── 📄 main.js             # Coordenação principal
-    └── 📄 README.md           # Documentação dos módulos
+    └── 📄 main.js             # Coordenação principal
 ```
 
 ## 🚀 Como Usar
@@ -82,11 +79,13 @@ QGpreLancamento/
    ```
 
 3. **Configure as credenciais**:
-   - Crie o arquivo `.env` na raiz do projeto
-   - Adicione suas credenciais:
-   ```env
-   SUPABASE_URL=https://seu-projeto.supabase.co
-   SUPABASE_ANON_KEY=sua-chave-anonima-aqui
+   - Edite o arquivo `js/config-simple.js`
+   - Substitua as credenciais pelas suas:
+   ```javascript
+   window.SUPABASE_CONFIG = {
+       url: 'https://seu-projeto.supabase.co',
+       anonKey: 'sua-chave-anonima-aqui'
+   };
    ```
 
 ### 2. Executar o Projeto
@@ -137,7 +136,7 @@ QGpreLancamento/
 
 O projeto utiliza uma arquitetura modular:
 
-- **`config.js`** - Configuração do Supabase
+- **`config-simple.js`** - Configuração do Supabase
 - **`notifications.js`** - Sistema de notificações
 - **`threejs.js`** - Animações 3D
 - **`animations.js`** - Animações GSAP/AOS
