@@ -1,0 +1,220 @@
+{
+  "app": {
+    "name": "QG da Aprovação",
+    "version": "2.0.0",
+    "description": "A plataforma definitiva para estudos de concursos policiais",
+    "author": "Mathias Fuhr",
+    "license": "MIT",
+    "repository": "https://github.com/mathiasfuhr/qg-aprovacao",
+    "website": "https://qgdaaprovacao.com"
+  },
+  "features": {
+    "security": {
+      "enabled": true,
+      "csp": true,
+      "rateLimiting": true,
+      "inputSanitization": true,
+      "encryptionSupport": true,
+      "securityHeaders": true
+    },
+    "performance": {
+      "enabled": true,
+      "lazyLoading": true,
+      "imageOptimization": true,
+      "caching": true,
+      "compression": true,
+      "minification": true
+    },
+    "accessibility": {
+      "enabled": true,
+      "screenReader": true,
+      "keyboardNavigation": true,
+      "highContrast": true,
+      "reducedMotion": true
+    },
+    "analytics": {
+      "enabled": false,
+      "googleAnalytics": false,
+      "mixpanel": false,
+      "customAnalytics": true,
+      "privacyCompliant": true
+    },
+    "pwa": {
+      "enabled": true,
+      "serviceWorker": true,
+      "offlineSupport": true,
+      "installPrompt": true,
+      "pushNotifications": false
+    }
+  },
+  "security": {
+    "csp": {
+      "defaultSrc": "'self'",
+      "scriptSrc": "'self' 'unsafe-inline' https://unpkg.com https://cdnjs.cloudflare.com",
+      "styleSrc": "'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "fontSrc": "'self' https://fonts.gstatic.com",
+      "imgSrc": "'self' data: https:",
+      "connectSrc": "'self' https://*.supabase.co wss://*.supabase.co",
+      "frameSrc": "'none'",
+      "objectSrc": "'none'",
+      "baseUri": "'self'",
+      "formAction": "'self'"
+    },
+    "headers": {
+      "xFrameOptions": "DENY",
+      "xContentTypeOptions": "nosniff",
+      "xXssProtection": "1; mode=block",
+      "referrerPolicy": "strict-origin-when-cross-origin",
+      "strictTransportSecurity": "max-age=31536000; includeSubDomains; preload"
+    },
+    "rateLimiting": {
+      "formSubmission": {
+        "max": 3,
+        "window": 60000
+      },
+      "pageLoad": {
+        "max": 100,
+        "window": 60000
+      },
+      "apiCall": {
+        "max": 10,
+        "window": 60000
+      }
+    },
+    "validation": {
+      "maxNameLength": 100,
+      "maxEmailLength": 254,
+      "minNameLength": 2,
+      "allowedNamePattern": "^[a-zA-ZÀ-ÿ\\s\\-'\\.]+$",
+      "suspiciousEmailDomains": [
+        "tempmail.org",
+        "10minutemail.com",
+        "guerrillamail.com",
+        "mailinator.com",
+        "throwaway.email"
+      ]
+    }
+  },
+  "performance": {
+    "caching": {
+      "staticAssets": "1 year",
+      "cssJs": "1 month",
+      "html": "1 hour",
+      "images": "1 year",
+      "fonts": "1 year"
+    },
+    "compression": {
+      "enabled": true,
+      "level": 6,
+      "types": [
+        "text/html",
+        "text/css",
+        "text/javascript",
+        "application/javascript",
+        "application/json",
+        "image/svg+xml"
+      ]
+    },
+    "optimization": {
+      "minifyHtml": true,
+      "minifyCss": true,
+      "minifyJs": true,
+      "optimizeImages": true,
+      "lazyLoadImages": true
+    }
+  },
+  "database": {
+    "provider": "supabase",
+    "tables": {
+      "listaEspera": {
+        "name": "lista_de_espera",
+        "fields": {
+          "id": "BIGSERIAL PRIMARY KEY",
+          "nome": "TEXT NOT NULL",
+          "email": "TEXT UNIQUE NOT NULL",
+          "dadosAdicionais": "JSONB",
+          "createdAt": "TIMESTAMPTZ DEFAULT NOW()",
+          "status": "TEXT DEFAULT 'ativo'"
+        }
+      }
+    },
+    "rls": {
+      "enabled": true,
+      "policies": [
+        {
+          "name": "Permitir inserção pública",
+          "table": "lista_de_espera",
+          "operation": "INSERT",
+          "condition": "true"
+        }
+      ]
+    }
+  },
+  "integrations": {
+    "fonts": {
+      "google": {
+        "families": [
+          "Inter:wght@300;400;500;600;700;800;900",
+          "Space+Grotesk:wght@400;500;600;700;800"
+        ]
+      }
+    },
+    "libraries": {
+      "aos": {
+        "version": "2.3.1",
+        "cdn": "https://unpkg.com/aos@2.3.1/dist/aos.js"
+      },
+      "gsap": {
+        "version": "3.12.2",
+        "cdn": "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+      },
+      "threejs": {
+        "version": "r128",
+        "cdn": "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
+      },
+      "supabase": {
+        "version": "2",
+        "cdn": "https://unpkg.com/@supabase/supabase-js@2"
+      }
+    }
+  },
+  "seo": {
+    "title": "QG da Aprovação - Sua Central de Comando para Concursos Policiais",
+    "description": "A plataforma definitiva para estudos de concursos policiais. Sistema inteligente de revisões, planos personalizados e acompanhamento real do progresso.",
+    "keywords": [
+      "concursos policiais",
+      "estudos",
+      "aprovação",
+      "QG da Aprovação",
+      "Mathias Fuhr",
+      "plano de estudos",
+      "revisões inteligentes",
+      "concurso público"
+    ],
+    "og": {
+      "type": "website",
+      "siteName": "QG da Aprovação",
+      "locale": "pt_BR"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "creator": "@mathiasfuhr"
+    }
+  },
+  "contact": {
+    "email": "contato@qgdaaprovacao.com",
+    "instagram": "https://instagram.com/qgdaaprovacao",
+    "support": "suporte@qgdaaprovacao.com"
+  },
+  "legal": {
+    "privacyPolicy": "/privacy",
+    "termsOfService": "/terms",
+    "cookiePolicy": "/cookies"
+  },
+  "monitoring": {
+    "errorTracking": true,
+    "performanceMonitoring": true,
+    "securityLogging": true,
+    "userBehaviorTracking": false
+  }
+}

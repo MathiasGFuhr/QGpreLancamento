@@ -1,346 +1,502 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- ===== META TAGS ESSENCIAIS ===== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O QG da Aprovação - Em Breve</title>
-    
-    <!-- Favicon e Meta Tags -->
-    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
-    <link rel="apple-touch-icon" href="images/logo.svg">
-    <meta name="description" content="A forma como você estuda para concursos policiais está prestes a mudar. Entre para a lista VIP e seja um dos primeiros a ter acesso ao QG da Aprovação.">
-    <meta name="keywords" content="concursos policiais, estudos, aprovação, QG da Aprovação, Mathias Fuhr">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="pt-BR">
     <meta name="author" content="Mathias Fuhr">
     
-    <!-- Open Graph / Facebook -->
+    <!-- ===== TÍTULO E DESCRIÇÃO ===== -->
+    <title>QG da Aprovação - Sua Central de Comando para Concursos Policiais</title>
+    <meta name="description" content="A plataforma definitiva para estudos de concursos policiais. Sistema inteligente de revisões, planos personalizados e acompanhamento real do progresso. Entre para a lista VIP!">
+    <meta name="keywords" content="concursos policiais, estudos, aprovação, QG da Aprovação, Mathias Fuhr, plano de estudos, revisões inteligentes, concurso público">
+    
+    <!-- ===== OPEN GRAPH / FACEBOOK ===== -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://qgdaaprovacao.com/">
-    <meta property="og:title" content="O QG da Aprovação - Em Breve">
-    <meta property="og:description" content="A forma como você estuda para concursos policiais está prestes a mudar. Entre para a lista VIP!">
-    <meta property="og:image" content="images/logo.svg">
+    <meta property="og:title" content="QG da Aprovação - Sua Central de Comando para Concursos Policiais">
+    <meta property="og:description" content="A plataforma definitiva para estudos de concursos policiais. Sistema inteligente de revisões, planos personalizados e acompanhamento real do progresso.">
+    <meta property="og:image" content="https://qgdaaprovacao.com/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:site_name" content="QG da Aprovação">
     
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://qgdaaprovacao.com/">
-    <meta property="twitter:title" content="O QG da Aprovação - Em Breve">
-    <meta property="twitter:description" content="A forma como você estuda para concursos policiais está prestes a mudar. Entre para a lista VIP!">
-    <meta property="twitter:image" content="images/logo.svg">
+    <!-- ===== TWITTER CARDS ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://qgdaaprovacao.com/">
+    <meta name="twitter:title" content="QG da Aprovação - Sua Central de Comando para Concursos Policiais">
+    <meta name="twitter:description" content="A plataforma definitiva para estudos de concursos policiais. Sistema inteligente de revisões, planos personalizados e acompanhamento real do progresso.">
+    <meta name="twitter:image" content="https://qgdaaprovacao.com/images/twitter-image.png">
+    <meta name="twitter:creator" content="@mathiasfuhr">
     
-    <link rel="stylesheet" href="styles.css">
+    <!-- ===== FAVICON E ÍCONES ===== -->
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#fbbf24">
+    <meta name="theme-color" content="#fbbf24">
+    <meta name="msapplication-TileColor" content="#fbbf24">
+    
+    <!-- ===== PRECONNECT PARA PERFORMANCE ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- Bibliotecas de Animação -->
+    <!-- ===== FONTES ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- ===== ESTILOS ===== -->
+    <link rel="stylesheet" href="styles-new.css">
+    
+    <!-- ===== BIBLIOTECAS EXTERNAS ===== -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
-    <!-- Meta tags para performance -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- ===== STRUCTURED DATA ===== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "QG da Aprovação",
+        "url": "https://qgdaaprovacao.com",
+        "description": "A plataforma definitiva para estudos de concursos policiais",
+        "author": {
+            "@type": "Person",
+            "name": "Mathias Fuhr",
+            "jobTitle": "Desenvolvedor e Concurseiro"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://qgdaaprovacao.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- ===== PERFORMANCE HINTS ===== -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- ===== CANONICAL URL ===== -->
+    <link rel="canonical" href="https://qgdaaprovacao.com/">
 </head>
+
 <body>
-    <!-- Canvas 3D Background -->
-    <canvas id="three-canvas"></canvas>
+    <!-- ===== SKIP LINKS PARA ACESSIBILIDADE ===== -->
+    <a href="#main-content" class="sr-only">Pular para o conteúdo principal</a>
+    <a href="#navigation" class="sr-only">Pular para a navegação</a>
     
-    <!-- Marca d'água -->
-    <div class="watermark">
+    <!-- ===== CANVAS 3D BACKGROUND ===== -->
+    <canvas id="three-canvas" aria-hidden="true" role="presentation"></canvas>
+    
+    <!-- ===== MARCA D'ÁGUA ===== -->
+    <div class="watermark" aria-hidden="true" role="presentation">
         <svg width="400" height="400" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="45" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.3"/>
-            <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ffd700" opacity="0.3">QG</text>
-            <text x="50" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="#ffd700" opacity="0.3">da</text>
-            <text x="50" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ffd700" opacity="0.3">APROVAÇÃO</text>
+            <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="2" opacity="0.3"/>
+            <text x="50" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="currentColor" opacity="0.3">QG</text>
+            <text x="50" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="8" fill="currentColor" opacity="0.3">da</text>
+            <text x="50" y="65" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="currentColor" opacity="0.3">APROVAÇÃO</text>
         </svg>
     </div>
     
-    <!-- Floating Navigation -->
-    <nav class="floating-nav" data-aos="fade-down" data-aos-delay="500">
-        <div class="nav-container">
-            <div class="logo-container">
-                <img src="images/logo.svg" alt="QG da Aprovação" class="nav-logo">
-                <span class="nav-brand">QG da Aprovação</span>
-            </div>
-            <div class="nav-menu">
-                <a href="#hero" class="nav-link active">Início</a>
-                <a href="#benefits" class="nav-link">Benefícios</a>
-                <a href="#about" class="nav-link">Sobre</a>
-                <a href="#signup" class="nav-link cta-nav">Lista VIP</a>
-            </div>
+    <!-- ===== NAVEGAÇÃO PRINCIPAL ===== -->
+    <nav id="navigation" class="navbar" role="navigation" aria-label="Navegação principal">
+        <div class="navbar-container">
+            <a href="#home" class="navbar-brand" aria-label="QG da Aprovação - Página inicial">
+                <img src="images/logo.svg" alt="Logo QG da Aprovação" class="navbar-logo" width="40" height="40">
+                <span>QG da Aprovação</span>
+            </a>
+            
+            <ul class="navbar-nav" role="menubar">
+                <li role="none">
+                    <a href="#home" class="navbar-link active" role="menuitem" aria-current="page">
+                        Início
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#benefits" class="navbar-link" role="menuitem">
+                        Benefícios
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#about" class="navbar-link" role="menuitem">
+                        Sobre
+                    </a>
+                </li>
+                <li role="none">
+                    <a href="#signup" class="navbar-link navbar-cta" role="menuitem">
+                        Lista VIP
+                    </a>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Hero Section com Parallax -->
-    <section id="hero" class="hero-section">
-        <div class="hero-background">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
-            </div>
-        </div>
+    <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+    <main id="main-content" role="main">
         
-        <div class="hero-container">
-            <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
-                <div class="hero-badge" data-aos="zoom-in" data-aos-delay="200">
-                    <span class="rocket-emoji">🚀</span>
-                    <span class="badge-text">Em Breve</span>
+        <!-- ===== SEÇÃO HERO ===== -->
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="hero-background" aria-hidden="true">
+                <div class="hero-shapes">
+                    <div class="hero-shape" role="presentation"></div>
+                    <div class="hero-shape" role="presentation"></div>
+                    <div class="hero-shape" role="presentation"></div>
+                    <div class="hero-shape" role="presentation"></div>
                 </div>
-                
-                <h1 class="hero-title" data-aos="fade-up" data-aos-delay="400">
-                    A forma como você estuda para 
-                    <span class="gradient-text">concursos policiais</span> 
-                    está prestes a mudar.
-                </h1>
-                
-                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
-                    Uma nova central de comando para seus estudos, feita por um concurseiro para concurseiros. 
-                    Chega de caos, é hora de ter um plano de batalha.
-                </p>
-                
-                <div class="hero-cta" data-aos="fade-up" data-aos-delay="800">
-                    <a href="#signup" class="btn-primary pulse-animation">
-                        <span>QUERO ACESSO ANTECIPADO!</span>
-                        <div class="btn-glow"></div>
-                    </a>
-                </div>
-                
             </div>
             
-            <div class="hero-visual" data-aos="fade-left" data-aos-delay="600">
-                <div class="floating-card card-1">
-                    <div class="card-icon">📊</div>
-                    <div class="card-content">
-                        <h4>Progresso Real</h4>
-                        <p>Acompanhe sua evolução</p>
-                    </div>
-                </div>
-                
-                <div class="floating-card card-2">
-                    <div class="card-icon">🎯</div>
-                    <div class="card-content">
-                        <h4>Plano Inteligente</h4>
-                        <p>Estratégia personalizada</p>
-                    </div>
-                </div>
-                
-                <div class="floating-card card-3">
-                    <div class="card-icon">⚡</div>
-                    <div class="card-content">
-                        <h4>Revisões Eficazes</h4>
-                        <p>Sistema que funciona</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="benefits-section">
-        <div class="container">
-            <div class="benefits-header" data-aos="fade-up">
-                <h2 class="benefits-title">O Fim da Desorganização está Próximo</h2>
-            </div>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="benefit-icon">
-                        <div class="icon-wrapper">🎯</div>
-                    </div>
-                    <h4 class="benefit-title">Plano de Batalha Inteligente</h4>
-                    <p class="benefit-description">
-                        Tenha clareza total do que estudar hoje, amanhã e sempre. Um plano de estudos estratégico, gerado para a sua realidade.
-                    </p>
-                </div>
-                
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="benefit-icon">
-                        <div class="icon-wrapper">🔄</div>
-                    </div>
-                    <h4 class="benefit-title">Revisões que Funcionam</h4>
-                    <p class="benefit-description">
-                        Construído para vencer o esquecimento. Nossa automação agenda suas revisões nos momentos exatos para mover a matéria para a memória de longo prazo.
-                    </p>
-                </div>
-                
-                <div class="benefit-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="benefit-icon">
-                        <div class="icon-wrapper">📈</div>
-                    </div>
-                    <h4 class="benefit-title">Progresso Real e Visível</h4>
-                    <p class="benefit-description">
-                        Veja o mapa da sua aprovação ser preenchido. Acompanhe seu avanço real no edital e tenha a certeza de que seu esforço está gerando resultado.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="about-header" data-aos="fade-up">
-                <h2 class="about-title">Feito por quem vive a mesma batalha que você</h2>
-                <p class="about-subtitle">Conheça a história por trás do QG da Aprovação</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-text" data-aos="fade-right">
-                    <div class="about-story">
-                        <p class="story-paragraph">
-                            As horas de sono que você sacrifica. Os fins de semana que você abdica pela sua missão. Todo esse esforço merece uma direção clara, um plano de batalha. Mas o que acontece quando a sua principal ferramenta, a planilha de estudos, se torna o seu maior obstáculo – um labirinto que esconde o seu progresso em vez de revelá-lo?
-                        </p>
-                        
-                        <p class="story-paragraph highlight">
-                            Eu sei exatamente como é essa sensação.
-                        </p>
-                        
-                        <p class="story-paragraph">
-                            Meu nome é <strong>Mathias Fuhr.</strong> E a minha história talvez seja parecida com a sua. Durante as longas e silenciosas madrugadas, eu visto o uniforme de técnico de enfermagem. Mas quando o plantão acaba, a minha verdadeira batalha começa. A batalha pelo meu maior sonho: conquistar um distintivo da Polícia Federal.
-                        </p>
-                        
-                        <p class="story-paragraph">
-                            Eu estava afogando em um mar de conteúdo desorganizado. Sentia que meu esforço era gigante, mas meu avanço era invisível. Eu dedicava cada minuto livre, mas a sensação de esquecer a matéria da semana passada era um fantasma constante. Onde eu estava errando?
-                        </p>
-                        
-                        <p class="story-paragraph">
-                            O erro não era a falta de dedicação. Era a falta da ferramenta certa.
-                        </p>
-                        
-                        <p class="story-paragraph">
-                            Eu não precisava de mais uma planilha. Eu precisava de um centro de comando. De um plano de batalha que me dissesse exatamente o que fazer, que usasse a ciência para me impedir de esquecer, e que me provasse que eu estava avançando, mesmo nos dias mais difíceis.
-                        </p>
-                        
-                        <p class="story-paragraph">
-                            Se essa ferramenta não existia, eu mesmo teria que construí-la.
-                        </p>
-                        
-                        <p class="story-paragraph">
-                            Foi dessa necessidade, dessa mistura de frustração e esperança, que nasceu o <strong>QG da Aprovação.</strong> Uni meu conhecimento como programador à minha realidade como concurseiro para forjar a arma que eu precisava para vencer essa guerra.
-                        </p>
-                        
-                        <p class="story-paragraph">
-                            Esta não é apenas a minha ferramenta. Ela foi construída para ser o nosso centro de comando. Se você se viu nesta história e está pronto para trocar o caos pela estratégia, você está no lugar certo.
-                        </p>
-                        
-                        <p class="story-paragraph call-to-action">
-                            Bem-vindo à sua central de comando. Bem-vindo ao QG da Aprovação.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="about-visual" data-aos="fade-left">
-                    <div class="profile-card">
-                        <div class="profile-image">
-                            <div class="profile-photo">
-                                <img src="images/mathiasFuhr.png" alt="Mathias Fuhr" class="profile-img" loading="lazy">
-                            </div>
+            <div class="container">
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <div class="hero-badge" data-aos="zoom-in" data-aos-delay="200">
+                            <span class="hero-badge-icon" role="img" aria-label="Foguete">🚀</span>
+                            <span>Em Breve</span>
                         </div>
-                        <div class="profile-info">
-                            <h3 class="profile-name">Mathias Fuhr</h3>
-                            <p class="profile-subtitle">Concurseiro & Desenvolvedor</p>
-                            <div class="profile-badges">
-                                <span class="badge">Técnico em Enfermagem</span>
-                                <span class="badge">Futuro Policial</span>
-                                <span class="badge">Criador do QG</span>
+                        
+                        <h1 id="hero-title" class="hero-title" data-aos="fade-up" data-aos-delay="400">
+                            A forma como você estuda para 
+                            <span class="hero-title-highlight">concursos policiais</span> 
+                            está prestes a mudar.
+                        </h1>
+                        
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
+                            Uma nova central de comando para seus estudos, feita por um concurseiro para concurseiros. 
+                            Chega de caos, é hora de ter um plano de batalha.
+                        </p>
+                        
+                        <div class="hero-cta" data-aos="fade-up" data-aos-delay="800">
+                            <a href="#signup" class="btn btn-primary btn-xl">
+                                <span>QUERO ACESSO ANTECIPADO!</span>
+                            </a>
+                            <p class="text-sm" style="color: rgba(255, 255, 255, 0.7); margin-top: 1rem;">
+                                ✨ Gratuito • 🎁 Bônus exclusivos • 💎 Preço especial
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-visual" data-aos="fade-left" data-aos-delay="600" aria-hidden="true">
+                        <div class="hero-cards">
+                            <div class="hero-card">
+                                <span class="hero-card-icon" role="img" aria-label="Gráfico">📊</span>
+                                <h3 class="hero-card-title">Progresso Real</h3>
+                                <p class="hero-card-description">Acompanhe sua evolução no edital</p>
+                            </div>
+                            
+                            <div class="hero-card">
+                                <span class="hero-card-icon" role="img" aria-label="Alvo">🎯</span>
+                                <h3 class="hero-card-title">Plano Inteligente</h3>
+                                <p class="hero-card-description">Estratégia personalizada para você</p>
+                            </div>
+                            
+                            <div class="hero-card">
+                                <span class="hero-card-icon" role="img" aria-label="Raio">⚡</span>
+                                <h3 class="hero-card-title">Revisões Eficazes</h3>
+                                <p class="hero-card-description">Sistema baseado em ciência</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Signup Section -->
-    <section id="signup" class="signup-section">
-        <div class="signup-background">
-            <div class="gradient-orb orb-1"></div>
-            <div class="gradient-orb orb-2"></div>
-        </div>
-        
-        <div class="container">
-            <div class="signup-content" data-aos="zoom-in">
-                <h2 class="signup-title">Entre para a Lista VIP</h2>
-                <p class="signup-subtitle">
-                    Seja um dos primeiros a ter acesso ao QG da Aprovação e 
-                    ganhe vantagens exclusivas no lançamento.
-                </p>
+        <!-- ===== SEÇÃO DE BENEFÍCIOS ===== -->
+        <section id="benefits" class="section section-light" aria-labelledby="benefits-title">
+            <div class="container">
+                <header class="section-header" data-aos="fade-up">
+                    <h2 id="benefits-title" class="section-title">
+                        O Fim da Desorganização está Próximo
+                    </h2>
+                    <p class="section-subtitle">
+                        Descubra como nossa plataforma vai revolucionar seus estudos
+                    </p>
+                </header>
                 
-                <form class="signup-form" id="signup-form">
-                    <div class="form-group">
-                        <input type="text" name="name" class="form-input" placeholder="Seu Nome" required>
-                        <div class="input-glow"></div>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" class="form-input" placeholder="Seu Melhor E-mail" required>
-                        <div class="input-glow"></div>
-                    </div>
-                    <button type="submit" class="btn-primary form-btn">
-                        <span>QUERO ACESSO ANTECIPADO!</span>
-                        <div class="btn-glow"></div>
-                    </button>
-                </form>
+                <div class="grid grid-cols-3 animate-stagger">
+                    <article class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="benefit-icon" aria-hidden="true">
+                            <span role="img" aria-label="Alvo">🎯</span>
+                        </div>
+                        <h3 class="benefit-title">Plano de Batalha Inteligente</h3>
+                        <p class="benefit-description">
+                            Tenha clareza total do que estudar hoje, amanhã e sempre. Um plano de estudos estratégico, gerado para a sua realidade.
+                        </p>
+                    </article>
+                    
+                    <article class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="benefit-icon" aria-hidden="true">
+                            <span role="img" aria-label="Ciclo">🔄</span>
+                        </div>
+                        <h3 class="benefit-title">Revisões que Funcionam</h3>
+                        <p class="benefit-description">
+                            Construído para vencer o esquecimento. Nossa automação agenda suas revisões nos momentos exatos para mover a matéria para a memória de longo prazo.
+                        </p>
+                    </article>
+                    
+                    <article class="benefit-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="benefit-icon" aria-hidden="true">
+                            <span role="img" aria-label="Gráfico crescente">📈</span>
+                        </div>
+                        <h3 class="benefit-title">Progresso Real e Visível</h3>
+                        <p class="benefit-description">
+                            Veja o mapa da sua aprovação ser preenchido. Acompanhe seu avanço real no edital e tenha a certeza de que seu esforço está gerando resultado.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO SOBRE O CRIADOR ===== -->
+        <section id="about" class="section section-dark" aria-labelledby="about-title">
+            <div class="container">
+                <header class="section-header" data-aos="fade-up">
+                    <h2 id="about-title" class="section-title">
+                        Feito por quem vive a mesma batalha que você
+                    </h2>
+                    <p class="section-subtitle">
+                        Conheça a história por trás do QG da Aprovação
+                    </p>
+                </header>
                 
-                <div class="signup-benefits">
-                    <div class="benefit-item">
-                        <span class="benefit-icon">✨</span>
-                        <span>Acesso antecipado gratuito</span>
+                <div class="grid grid-cols-2" style="gap: 4rem; align-items: start;">
+                    <div class="about-content" data-aos="fade-right">
+                        <div class="about-story">
+                            <p class="mb-6">
+                                As horas de sono que você sacrifica. Os fins de semana que você abdica pela sua missão. Todo esse esforço merece uma direção clara, um plano de batalha. Mas o que acontece quando a sua principal ferramenta, a planilha de estudos, se torna o seu maior obstáculo – um labirinto que esconde o seu progresso em vez de revelá-lo?
+                            </p>
+                            
+                            <p class="mb-6" style="background: rgba(251, 191, 36, 0.1); padding: 2rem; border-radius: 1rem; border: 1px solid rgba(251, 191, 36, 0.3); text-align: center; font-weight: 600; font-size: 1.25rem; color: var(--gold-400);">
+                                Eu sei exatamente como é essa sensação.
+                            </p>
+                            
+                            <p class="mb-6">
+                                Meu nome é <strong style="color: var(--gold-400);">Mathias Fuhr.</strong> E a minha história talvez seja parecida com a sua. Durante as longas e silenciosas madrugadas, eu visto o uniforme de técnico de enfermagem. Mas quando o plantão acaba, a minha verdadeira batalha começa. A batalha pelo meu maior sonho: conquistar um distintivo da Polícia Federal.
+                            </p>
+                            
+                            <p class="mb-6">
+                                Eu estava afogando em um mar de conteúdo desorganizado. Sentia que meu esforço era gigante, mas meu avanço era invisível. Eu dedicava cada minuto livre, mas a sensação de esquecer a matéria da semana passada era um fantasma constante. Onde eu estava errando?
+                            </p>
+                            
+                            <p class="mb-6">
+                                O erro não era a falta de dedicação. Era a falta da ferramenta certa.
+                            </p>
+                            
+                            <p class="mb-6">
+                                Eu não precisava de mais uma planilha. Eu precisava de um centro de comando. De um plano de batalha que me dissesse exatamente o que fazer, que usasse a ciência para me impedir de esquecer, e que me provasse que eu estava avançando, mesmo nos dias mais difíceis.
+                            </p>
+                            
+                            <p class="mb-6">
+                                Se essa ferramenta não existia, eu mesmo teria que construí-la.
+                            </p>
+                            
+                            <p class="mb-8">
+                                Foi dessa necessidade, dessa mistura de frustração e esperança, que nasceu o <strong style="color: var(--gold-400);">QG da Aprovação.</strong> Uni meu conhecimento como programador à minha realidade como concurseiro para forjar a arma que eu precisava para vencer essa guerra.
+                            </p>
+                            
+                            <div style="background: var(--gradient-gold); color: var(--neutral-900); padding: 2rem; border-radius: 1.5rem; text-align: center; font-weight: 700; font-size: 1.25rem; box-shadow: var(--shadow-xl);">
+                                Esta não é apenas a minha ferramenta. Ela foi construída para ser o nosso centro de comando. Se você se viu nesta história e está pronto para trocar o caos pela estratégia, você está no lugar certo.
+                                <br><br>
+                                <strong style="text-transform: uppercase; letter-spacing: 1px;">
+                                    Bem-vindo à sua central de comando. Bem-vindo ao QG da Aprovação.
+                                </strong>
+                            </div>
+                        </div>
                     </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">🎁</span>
-                        <span>Bônus exclusivos</span>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="benefit-icon">💎</span>
-                        <span>Preço especial de lançamento</span>
+                    
+                    <div class="about-visual" data-aos="fade-left">
+                        <div class="card card-glass" style="max-width: 400px; margin: 0 auto; padding: 2rem; text-align: center;">
+                            <div class="profile-image" style="margin-bottom: 1.5rem;">
+                                <div style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto; border: 3px solid var(--gold-400); box-shadow: var(--shadow-xl);">
+                                    <img src="images/mathiasFuhr.png" alt="Mathias Fuhr - Criador do QG da Aprovação" 
+                                         style="width: 100%; height: 100%; object-fit: cover;" 
+                                         loading="lazy">
+                                </div>
+                            </div>
+                            
+                            <div class="profile-info">
+                                <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--neutral-0); margin-bottom: 0.5rem;">
+                                    Mathias Fuhr
+                                </h3>
+                                <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 1.5rem;">
+                                    Concurseiro & Desenvolvedor
+                                </p>
+                                
+                                <div class="profile-badges" style="display: flex; flex-wrap: wrap; gap: 0.5rem; justify-content: center;">
+                                    <span class="badge" style="background: var(--gold-400); color: var(--neutral-900); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">
+                                        Técnico em Enfermagem
+                                    </span>
+                                    <span class="badge" style="background: var(--gold-400); color: var(--neutral-900); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">
+                                        Futuro Policial
+                                    </span>
+                                    <span class="badge" style="background: var(--gold-400); color: var(--neutral-900); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600;">
+                                        Criador do QG
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+        <!-- ===== SEÇÃO DE CADASTRO ===== -->
+        <section id="signup" class="form-section" aria-labelledby="signup-title">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-card" data-aos="zoom-in">
+                        <h2 id="signup-title" class="form-title">
+                            Entre para a Lista VIP
+                        </h2>
+                        <p class="form-subtitle">
+                            Seja um dos primeiros a ter acesso ao QG da Aprovação e 
+                            ganhe vantagens exclusivas no lançamento.
+                        </p>
+                        
+                        <form id="signup-form" class="form" novalidate>
+                            <div class="input-group">
+                                <label for="name" class="input-label">
+                                    Seu Nome Completo
+                                </label>
+                                <input type="text" 
+                                       id="name" 
+                                       name="name" 
+                                       class="input" 
+                                       placeholder="Digite seu nome completo" 
+                                       required 
+                                       autocomplete="name"
+                                       aria-describedby="name-error">
+                                <div id="name-error" class="input-error-message" role="alert" aria-live="polite"></div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="email" class="input-label">
+                                    Seu Melhor E-mail
+                                </label>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       class="input" 
+                                       placeholder="Digite seu melhor e-mail" 
+                                       required 
+                                       autocomplete="email"
+                                       aria-describedby="email-error email-help">
+                                <div id="email-help" class="text-sm" style="color: var(--neutral-600); margin-top: 0.25rem;">
+                                    Usaremos apenas para te avisar sobre o lançamento
+                                </div>
+                                <div id="email-error" class="input-error-message" role="alert" aria-live="polite"></div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-xl" style="width: 100%;">
+                                <span>QUERO ACESSO ANTECIPADO!</span>
+                            </button>
+                        </form>
+                        
+                        <div class="form-benefits">
+                            <div class="form-benefit">
+                                <span class="form-benefit-icon" role="img" aria-label="Estrelas">✨</span>
+                                <span>Acesso antecipado gratuito</span>
+                            </div>
+                            <div class="form-benefit">
+                                <span class="form-benefit-icon" role="img" aria-label="Presente">🎁</span>
+                                <span>Bônus exclusivos</span>
+                            </div>
+                            <div class="form-benefit">
+                                <span class="form-benefit-icon" role="img" aria-label="Diamante">💎</span>
+                                <span>Preço especial de lançamento</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-xs text-center" style="color: var(--neutral-500); margin-top: 2rem;">
+                            Seus dados estão seguros conosco. Não compartilhamos com terceiros.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/logo.svg" alt="QG da Aprovação" class="footer-logo">
+                    <img src="images/logo.svg" alt="Logo QG da Aprovação" class="footer-logo" width="48" height="48">
                     <p class="footer-description">
                         A plataforma definitiva para concurseiros que querem resultados reais.
                     </p>
                 </div>
                 
                 <div class="footer-contact">
-                    <p>Contato: <a href="mailto:contato@qgdaaprovacao.com">contato@qgdaaprovacao.com</a></p>
-                    <p>Siga no Instagram: <a href="https://instagram.com/qgdaaprovacao" target="_blank">@qgdaaprovacao</a></p>
+                    <p>
+                        <strong>Contato:</strong> 
+                        <a href="mailto:contato@qgdaaprovacao.com" class="footer-contact-item">
+                            contato@qgdaaprovacao.com
+                        </a>
+                    </p>
+                    <p>
+                        <strong>Siga no Instagram:</strong> 
+                        <a href="https://instagram.com/qgdaaprovacao" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="footer-contact-item">
+                            @qgdaaprovacao
+                        </a>
+                    </p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; <span id="current-year">2024</span> QG da Aprovação. Todos os direitos reservados.</p>
+                <p>
+                    &copy; <span id="current-year">2024</span> QG da Aprovação. 
+                    Todos os direitos reservados. 
+                    Desenvolvido com ❤️ por <strong>Mathias Fuhr</strong>.
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <!-- Supabase CDN -->
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    <!-- Configuração simples -->
-    <script src="js/config-simple.js"></script>
+    <!-- ===== SCRIPTS ===== -->
     
-    <!-- Módulos refatorados -->
-    <script src="js/performance.js"></script>
-    <script src="js/notifications.js"></script>
-    <script src="js/threejs.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/navigation.js"></script>
-    <script src="js/form.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Supabase -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2" defer></script>
+    
+    <!-- Bibliotecas de animação -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+    
+    <!-- Módulos da aplicação -->
+    <script src="js/security.js" defer></script>
+    <script src="js/config-simple.js" defer></script>
+    <script src="js/performance.js" defer></script>
+    <script src="js/notifications.js" defer></script>
+    <script src="js/threejs.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/navigation.js" defer></script>
+    <script src="js/form-secure.js" defer></script>
+    <script src="js/main-secure.js" defer></script>
+
+    <!-- Service Worker para PWA -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
