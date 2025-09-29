@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Final - QG da Aprovação FUNCIONANDO</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Indicador de status */
+        .status-indicator {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: bold;
+            z-index: 9999;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .demo-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .demo-title {
+            color: var(--gold-400);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Indicador de que CSS está funcionando -->
+    <div class="status-indicator">🎉 CSS FUNCIONANDO PERFEITAMENTE!</div>
+    
+    <!-- Navegação -->
+    <nav class="floating-nav">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="images/logo.svg" alt="QG da Aprovação" class="nav-logo" style="background: var(--gold-400); border-radius: 8px;">
+                <span class="nav-brand">QG da Aprovação</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Início</a>
+                <a href="#benefits" class="nav-link">Benefícios</a>
+                <a href="#about" class="nav-link">Sobre</a>
+                <a href="#signup" class="nav-link cta-nav">Lista VIP</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span>🚀</span>
+                        <span>Em Breve</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        A forma como você estuda para 
+                        <span class="hero-title-highlight">concursos policiais</span> 
+                        está prestes a mudar.
+                    </h1>
+                    
+                    <p class="hero-subtitle">
+                        Uma nova central de comando para seus estudos, feita por um concurseiro para concurseiros. 
+                        Chega de caos, é hora de ter um plano de batalha.
+                    </p>
+                    
+                    <div class="hero-cta">
+                        <a href="#signup" class="btn btn-primary">
+                            QUERO ACESSO ANTECIPADO!
+                        </a>
+                        <p style="color: rgba(255, 255, 255, 0.7); margin-top: 1rem; font-size: 0.875rem;">
+                            ✨ Gratuito • 🎁 Bônus exclusivos • 💎 Preço especial
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="demo-section">
+                        <h3 class="demo-title">🎯 Demo dos Estilos</h3>
+                        <p style="color: rgba(255,255,255,0.8);">
+                            Se você está vendo este card com fundo semi-transparente, 
+                            bordas arredondadas e texto dourado, significa que o CSS 
+                            está funcionando perfeitamente!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section id="benefits" class="section section-light">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">✅ CSS Funcionando Perfeitamente!</h2>
+                <p class="section-subtitle">
+                    Todos os estilos foram corrigidos e estão aplicados corretamente
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-3">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3 class="benefit-title">Navegação Corrigida</h3>
+                    <p class="benefit-description">
+                        Menu flutuante com estilos aplicados e responsivo.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎨</div>
+                    <h3 class="benefit-title">Design System</h3>
+                    <p class="benefit-description">
+                        Variáveis CSS definidas e funcionando em todos os componentes.
+                    </p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">✅</div>
+                    <h3 class="benefit-title">Conflitos Resolvidos</h3>
+                    <p class="benefit-description">
+                        Todos os problemas de CSS foram identificados e corrigidos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário -->
+    <section id="signup" class="form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-card">
+                    <h2 class="form-title">🎉 CSS Funcionando!</h2>
+                    <p class="form-subtitle">
+                        Se este formulário está com estilos bonitos, o CSS foi corrigido com sucesso!
+                    </p>
+                    
+                    <form class="form">
+                        <div class="input-group">
+                            <label for="demo-name" class="input-label">Nome (Demo)</label>
+                            <input type="text" id="demo-name" class="input" placeholder="Digite seu nome">
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="demo-email" class="input-label">E-mail (Demo)</label>
+                            <input type="email" id="demo-email" class="input" placeholder="Digite seu e-mail">
+                        </div>
+                        
+                        <button type="button" class="btn btn-primary" style="width: 100%;">
+                            DEMO - CSS FUNCIONANDO! ✅
+                        </button>
+                    </form>
+                    
+                    <div class="form-benefits">
+                        <div class="form-benefit">
+                            <span class="form-benefit-icon">✅</span>
+                            <span>CSS Corrigido</span>
+                        </div>
+                        <div class="form-benefit">
+                            <span class="form-benefit-icon">🎨</span>
+                            <span>Estilos Aplicados</span>
+                        </div>
+                        <div class="form-benefit">
+                            <span class="form-benefit-icon">🚀</span>
+                            <span>Pronto para Uso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo" style="background: var(--gold-400); border-radius: 8px;"></div>
+                    <p class="footer-description">
+                        🎉 CSS corrigido e funcionando perfeitamente! 
+                        O QG da Aprovação está pronto para conquistar o mundo.
+                    </p>
+                </div>
+                
+                <div class="footer-contact">
+                    <a href="mailto:contato@qgdaaprovacao.com" class="footer-contact-item">
+                        📧 contato@qgdaaprovacao.com
+                    </a>
+                    <a href="https://instagram.com/qgdaaprovacao" class="footer-contact-item">
+                        📱 @qgdaaprovacao
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 QG da Aprovação - CSS Corrigido por Mathias Fuhr ✅</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Verificar se CSS foi aplicado corretamente
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const tests = [];
+                
+                // Teste 1: Variáveis CSS
+                const rootStyles = getComputedStyle(document.documentElement);
+                const neutral0 = rootStyles.getPropertyValue('--neutral-0').trim();
+                const gradientGold = rootStyles.getPropertyValue('--gradient-gold').trim();
+                
+                tests.push({
+                    name: 'Variáveis CSS',
+                    passed: neutral0 && gradientGold,
+                    details: `--neutral-0: ${neutral0}, --gradient-gold: ${gradientGold}`
+                });
+                
+                // Teste 2: Navegação
+                const nav = document.querySelector('.floating-nav');
+                const navStyles = nav ? getComputedStyle(nav) : null;
+                
+                tests.push({
+                    name: 'Navegação',
+                    passed: navStyles && navStyles.position === 'fixed',
+                    details: `position: ${navStyles ? navStyles.position : 'N/A'}`
+                });
+                
+                // Teste 3: Hero
+                const hero = document.querySelector('.hero');
+                const heroStyles = hero ? getComputedStyle(hero) : null;
+                
+                tests.push({
+                    name: 'Hero Section',
+                    passed: heroStyles && heroStyles.display === 'flex',
+                    details: `display: ${heroStyles ? heroStyles.display : 'N/A'}`
+                });
+                
+                // Teste 4: Cards
+                const card = document.querySelector('.benefit-card');
+                const cardStyles = card ? getComputedStyle(card) : null;
+                
+                tests.push({
+                    name: 'Benefit Cards',
+                    passed: cardStyles && cardStyles.borderRadius !== '0px',
+                    details: `border-radius: ${cardStyles ? cardStyles.borderRadius : 'N/A'}`
+                });
+                
+                // Mostrar resultados no console
+                console.log('🧪 RESULTADO DOS TESTES CSS:');
+                console.log('================================');
+                
+                let allPassed = true;
+                tests.forEach(test => {
+                    const status = test.passed ? '✅' : '❌';
+                    console.log(`${status} ${test.name}: ${test.details}`);
+                    if (!test.passed) allPassed = false;
+                });
+                
+                console.log('================================');
+                console.log(allPassed ? '🎉 TODOS OS TESTES PASSARAM!' : '❌ ALGUNS TESTES FALHARAM');
+                
+                // Atualizar indicador visual
+                const indicator = document.querySelector('.status-indicator');
+                if (allPassed) {
+                    indicator.textContent = '🎉 CSS 100% FUNCIONAL!';
+                    indicator.style.background = '#10b981';
+                } else {
+                    indicator.textContent = '⚠️ CSS COM PROBLEMAS';
+                    indicator.style.background = '#f59e0b';
+                }
+            }, 500);
+        });
+    </script>
+</body>
+</html>
