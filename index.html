@@ -106,35 +106,27 @@
     </div>
     
     <!-- ===== NAVEGAÇÃO PRINCIPAL ===== -->
-    <nav id="navigation" class="navbar" role="navigation" aria-label="Navegação principal">
-        <div class="navbar-container">
-            <a href="#home" class="navbar-brand" aria-label="QG da Aprovação - Página inicial">
-                <img src="images/logo.svg" alt="Logo QG da Aprovação" class="navbar-logo" width="40" height="40">
-                <span>QG da Aprovação</span>
-            </a>
+    <nav id="navigation" class="floating-nav" role="navigation" aria-label="Navegação principal">
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="images/logo.svg" alt="Logo QG da Aprovação" class="nav-logo" width="40" height="40">
+                <span class="nav-brand">QG da Aprovação</span>
+            </div>
             
-            <ul class="navbar-nav" role="menubar">
-                <li role="none">
-                    <a href="#home" class="navbar-link active" role="menuitem" aria-current="page">
-                        Início
-                    </a>
-                </li>
-                <li role="none">
-                    <a href="#benefits" class="navbar-link" role="menuitem">
-                        Benefícios
-                    </a>
-                </li>
-                <li role="none">
-                    <a href="#about" class="navbar-link" role="menuitem">
-                        Sobre
-                    </a>
-                </li>
-                <li role="none">
-                    <a href="#signup" class="navbar-link navbar-cta" role="menuitem">
-                        Lista VIP
-                    </a>
-                </li>
-            </ul>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active" aria-current="page">
+                    Início
+                </a>
+                <a href="#benefits" class="nav-link">
+                    Benefícios
+                </a>
+                <a href="#about" class="nav-link">
+                    Sobre
+                </a>
+                <a href="#signup" class="nav-link cta-nav">
+                    Lista VIP
+                </a>
+            </div>
         </div>
     </nav>
 
@@ -481,8 +473,8 @@
     <script src="js/threejs.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/navigation.js" defer></script>
-    <script src="js/form-secure.js" defer></script>
-    <script src="js/main-secure.js" defer></script>
+    <script src="js/form.js" defer></script>
+    <script src="js/main.js" defer></script>
 
     <!-- Service Worker para PWA -->
     <script>
