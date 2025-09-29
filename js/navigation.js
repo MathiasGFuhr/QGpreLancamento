@@ -12,8 +12,8 @@ function initNavigation() {
         const scrollY = window.scrollY;
         
         // Detectar se está sobre seção com fundo branco
-        const benefitsSection = document.querySelector('.benefits-section');
-        const signupSection = document.querySelector('.signup-section');
+        const benefitsSection = document.querySelector('#benefits');
+        const signupSection = document.querySelector('#signup');
         
         let isOverWhiteSection = false;
         
